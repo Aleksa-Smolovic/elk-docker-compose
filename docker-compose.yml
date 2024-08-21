@@ -26,6 +26,17 @@ services:
       - elasticsearch
     networks:
       - elastic
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.15.2
+    container_name: logstash
+    volumes:
+      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+      - ./logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./data/logs:/home/logs # location where log files are stored
+    depends_on:
+      - elasticsearch
+    networks:
+      - elastic
 
 networks:
   elastic:
