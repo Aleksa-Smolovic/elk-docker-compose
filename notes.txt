@@ -1,0 +1,1 @@
+ILM - Index Lifecycle Management:  https://www.elastic.co/guide/en/elasticsearch/reference/current/index-lifecycle-management.html
